@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M. Khairul Dzikri | Portofolio PPLG</title>
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">A
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ================= CSS MURNI (CUSTOM STYLES) ================= -->
+    <style>
+        /* Variabel Warna & Tema */
+        :root {
+            --bg-dark: #0b0f19;
+            --bg-card: #131b2e;
+            --bg-section-alt: #0e1424;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-blue-hover: #2563eb;
+            --accent-emerald: #10b981;
+            --border-color: #1e293b;
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        /* Reset Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Container Utama */
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ================= NAVBAR ================= */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .logo-badge {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-emerald));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-mono);
+            color: #fff;
+            font-weight: 700;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-badge {
+            transform: scale(1.06);
+        }
+
+        .logo span {
+            color: var(--accent-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .nav-links a {
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* ================= HERO SECTION ================= */
+        .hero {
+            padding: 140px 0 90px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .badge-jurusan {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background-color: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        .dot-pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--accent-emerald);
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.3); }
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #60a5fa, #818cf8, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            max-width: 540px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 13px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-blue);
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-blue-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #1e293b;
+        }
+
+        /* Kartu Terminal Kode */
+        .code-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ================= PROFIL FOTO ================= */
+        .profile-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-photo-box {
+            position: relative;
+            width: 135px;
+            height: 135px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-emerald));
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .profile-photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            background-color: var(--bg-dark);
+            display: block;
+        }
+
+        .upload-photo-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .upload-photo-btn:hover {
+            background-color: var(--accent-blue);
+            color: #fff;
+        }
+
+        /* ================= TUJUAN SAYA ================= */
+        .goal-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(16, 185, 129, 0.08));
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            border-radius: 18px;
+            padding: 32px;
+            margin-top: 32px;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .goal-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-emerald));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.25);
+        }
+
+        .goal-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .goal-content p {
+            color: var(--text-secondary);
+            font-size: 0.96rem;
+            margin-bottom: 14px;
+        }
+
+        .goal-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .goal-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            color: #cbd5e1;
+        }
+
+        .goal-tag i {
+            color: var(--accent-emerald);
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 14px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .window-dots {
+            display: flex;
+            gap: 7px;
+        }
+
+        .window-dots span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background-color: #f43f5e; }
+        .dot-yellow { background-color: #f59e0b; }
+        .dot-green { background-color: #10b981; }
+
+        .file-name {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .code-content {
+            font-family: var(--font-mono);
+            font-size: 0.88rem;
+            color: #cbd5e1;
+            overflow-x: auto;
+            line-height: 1.7;
+        }
+
+        .key { color: #60a5fa; }
+        .str { color: #34d399; }
+        .arr { color: #fcd34d; }
+
+        /* ================= SECTION UMUM ================= */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-alt {
+            background-color: var(--bg-section-alt);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .section-line {
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-blue);
+            margin: 0 auto 14px;
+            border-radius: 4px;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+        }
+
+        /* ================= TENTANG SAYA ================= */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 28px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 18px;
+        }
+
+        .icon-blue { background: rgba(59, 130, 246, 0.12); color: #60a5fa; }
+        .icon-green { background: rgba(16, 185, 129, 0.12); color: #34d399; }
+        .icon-purple { background: rgba(168, 85, 247, 0.12); color: #c084fc; }
+
+        .card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+        }
+
+        /* ================= KEAHLIAN ================= */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .skill-item {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-weight: 600;
+            transition: border-color 0.3s ease;
+        }
+
+        .skill-item:hover {
+            border-color: var(--accent-blue);
+        }
+
+        .skill-item i {
+            font-size: 1.6rem;
+        }
+
+        /* ================= PROYEK ================= */
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 9px 18px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-card);
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--accent-blue);
+            color: #fff;
+            border-color: var(--accent-blue);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .project-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card.hidden {
+            display: none;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-banner {
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            font-size: 3rem;
+        }
+
+        .banner-blue { background: linear-gradient(135deg, #1e3a8a, #0f172a); color: #60a5fa; }
+        .banner-green { background: linear-gradient(135deg, #064e3b, #0f172a); color: #34d399; }
+        .banner-purple { background: linear-gradient(135deg, #4c1d95, #0f172a); color: #c084fc; }
+
+        .project-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: rgba(11, 15, 25, 0.85);
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-body {
+            padding: 22px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-body h3 {
+            font-size: 1.12rem;
+            margin-bottom: 8px;
+        }
+
+        .project-body p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 18px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .tech-tags span {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            background-color: #1e293b;
+            color: #cbd5e1;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        /* ================= KONTAK ================= */
+        /* Bagian kontak telah dihapus sesuai permintaan */
+
+        /* ================= FOOTER ================= */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 30px 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 18px;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* ================= RESPONSIVE (MOBILE & TABLET) ================= */
+        @media (max-width: 960px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-desc {
+                margin: 0 auto 30px;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .about-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .goal-box {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .goal-icon {
+                margin: 0 auto;
+            }
+            .goal-list {
+                justify-content: center;
+            }
+            .contact-box {
+                padding: 24px;
+            }
+            .footer-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= HEADER / NAVBAR ================= -->
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <div class="logo-badge">KD</div>
+                <div>Khairul<span>.dev</span></div>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Buka Navigasi">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#tujuan">Tujuan</a></li>
+                <li><a href="#keahlian">Keahlian PPLG</a></li>
+                <li><a href="#proyek">Proyek</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="badge-jurusan">
+                    <span class="dot-pulse"></span>
+                    Jurusan PPLG (Pengembangan Perangkat Lunak & Gim)
+                </div>
+                <h1 class="hero-title">
+                    Halo, Saya <br>
+                    <span class="gradient-text">M. Khairul Dzikri</span>
+                </h1>
+                <p class="hero-desc">
+                    Pelajar dan pengembang muda di bidang Rekayasa Perangkat Lunak dan Gim yang berfokus membangun aplikasi web responsif, sistem informasi, serta gim interaktif.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#proyek" class="btn btn-primary">
+                        <i class="fas fa-code"></i> Lihat Portofolio
+                    </a>
+                    <a href="#tujuan" class="btn btn-secondary">
+                        <i class="fas fa-bullseye"></i> Tujuan Saya
+                    </a>
+                </div>
+            </div>
+
+            <!-- Kartu Profil Foto & JSON -->
+            <div class="code-card">
+                <div class="code-header">
+                    <div class="window-dots">
+                        <span class="dot-red"></span>
+                        <span class="dot-yellow"></span>
+                        <span class="dot-green"></span>
+                    </div>
+                    <span class="file-name">profil_dzikri.json</span>
+                </div>
+
+                <!-- Bagian Foto Profil -->
+                <div class="profile-wrapper">
+                    <div class="profile-photo-box">
+                        <!-- Ganti src dengan nama file foto Anda, misal: src="foto-dzikri.jpg" -->
+                        <img id="profileImage" src="https://placehold.co/300x300/131b2e/60a5fa?text=Foto+Dzikri" alt="Foto Profil M. Khairul Dzikri" onerror="this.src='https://placehold.co/300x300/131b2e/60a5fa?text=KD'">
+                    </div>
+                    <label for="photoInput" class="upload-photo-btn">
+                        <i class="fas fa-camera"></i> Pilih / Ganti Foto
+                    </label>
+                    <input type="file" id="photoInput" accept="image/*" style="display: none;">
+                </div>
+
+                <pre class="code-content"><code>{
+  <span class="key">"nama"</span>: <span class="str">"M. Khairul Dzikri"</span>,
+  <span class="key">"jurusan"</span>: <span class="str">"PPLG"</span>,
+  <span class="key">"minat"</span>: [
+    <span class="arr">"Web Development"</span>,
+    <span class="arr">"Software Engineering"</span>,
+    <span class="arr">"Game Development"</span>
+  ],
+  <span class="key">"status"</span>: <span class="str">"Siap Belajar & Berkolaborasi"</span>
+}</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TENTANG SAYA & TUJUAN ================= -->
+    <section id="tentang" class="section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tentang Saya</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Fokus utama kompetensi yang saya pelajari dan kembangkan di jurusan PPLG.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="card">
+                    <div class="icon-box icon-blue"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Pengembangan Web</h3>
+                    <p>Membangun antarmuka website modern menggunakan HTML, CSS, JavaScript, serta pengelolaan backend berbasis PHP dan basis data.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box icon-green"><i class="fas fa-gamepad"></i></div>
+                    <h3>Pengembangan Gim</h3>
+                    <p>Merancang logika permainan, mekanika karakter, serta pengembangan gim 2D/3D interaktif menggunakan engine seperti Unity.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box icon-purple"><i class="fas fa-database"></i></div>
+                    <h3>Basis Data & Algoritma</h3>
+                    <p>Memahami perancangan struktur database relasional (MySQL), pemrograman berorientasi objek (OOP), dan pemecahan masalah logis.</p>
+                </div>
+            </div>
+
+            <!-- Bagian Tujuan Saya -->
+            <div id="tujuan" class="goal-box">
+                <div class="goal-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div class="goal-content">
+                    <h3>Tujuan & Visi Karir Saya</h3>
+                    <p>
+                        Sebagai siswa jurusan <strong>PPLG</strong>, tujuan utama saya adalah menjadi seorang <strong>Full-Stack Developer & Game Creator</strong> yang mampu menciptakan solusi digital bermanfaat bagi masyarakat, terus mengasah kemampuan pemrograman modern, serta siap berkontribusi secara profesional di industri teknologi.
+                    </p>
+                    <div class="goal-list">
+                        <span class="goal-tag"><i class="fas fa-check-circle"></i> Menguasai Teknologi Web & Mobile</span>
+                        <span class="goal-tag"><i class="fas fa-check-circle"></i> Merilis Produk Aplikasi & Gim Orisinal</span>
+                        <span class="goal-tag"><i class="fas fa-check-circle"></i> Siap Magang & Karir Industri IT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= KEAHLIAN ================= -->
+    <section id="keahlian">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Keahlian & Teknologi</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Bahasa pemrograman dan perangkat lunak yang saya kuasai.</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fab fa-html5" style="color:#f97316;"></i> HTML5 & CSS3</div>
+                <div class="skill-item"><i class="fab fa-js" style="color:#facc15;"></i> JavaScript</div>
+                <div class="skill-item"><i class="fab fa-php" style="color:#818cf8;"></i> PHP & Laravel</div>
+                <div class="skill-item"><i class="fas fa-database" style="color:#38bdf8;"></i> MySQL</div>
+                <div class="skill-item"><i class="fab fa-python" style="color:#4ade80;"></i> Python</div>
+                <div class="skill-item"><i class="fas fa-gamepad" style="color:#c084fc;"></i> Unity & C#</div>
+                <div class="skill-item"><i class="fab fa-git-alt" style="color:#fb7185;"></i> Git & GitHub</div>
+                <div class="skill-item"><i class="fab fa-figma" style="color:#f472b6;"></i> UI/UX Figma</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROYEK ================= -->
+    <section id="proyek" class="section-alt">
+        <div class="container">
+            <div class="project-top">
+                <div>
+                    <h2 class="section-title">Proyek Unggulan</h2>
+                    <div class="section-line" style="margin: 0 0 10px;"></div>
+                    <p class="section-subtitle">Karya aplikasi dan gim yang pernah saya kerjakan di PPLG.</p>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="web">Aplikasi Web</button>
+                    <button class="filter-btn" data-filter="game">Gim (Game)</button>
+                </div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Proyek 1 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-banner banner-blue">
+                        <span class="project-tag">Web App</span>
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <h3>Sistem Informasi Perpustakaan</h3>
+                            <p>Aplikasi web manajemen peminjaman buku, pendataan anggota, serta laporan otomatis berbasis web.</p>
+                        </div>
+                        <div class="tech-tags">
+                            <span>HTML/CSS</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyek 2 -->
+                <div class="project-card" data-category="game">
+                    <div class="project-banner banner-green">
+                        <span class="project-tag">2D Game</span>
+                        <i class="fas fa-dragon"></i>
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <h3>Petualangan Nusantara 2D</h3>
+                            <p>Gim platformer edukasi bertema budaya Indonesia dengan mekanik rintangan dan skor bertingkat.</p>
+                        </div>
+                        <div class="tech-tags">
+                            <span>Unity</span>
+                            <span>C#</span>
+                            <span>Pixel Art</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyek 3 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-banner banner-purple">
+                        <span class="project-tag">Frontend</span>
+                        <i class="fas fa-list-check"></i>
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <h3>Aplikasi Manajemen Tugas Siswa</h3>
+                            <p>Aplikasi web interaktif untuk mencatat jadwal pelajaran, tenggat tugas, dan progres belajar harian.</p>
+                        </div>
+                        <div class="tech-tags">
+                            <span>JavaScript</span>
+                            <span>LocalStorage</span>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="container footer-flex">
+            <p>&copy; 2026 <strong>M. Khairul Dzikri</strong> — Jurusan PPLG.</p>
+            <div class="social-links">
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 0. Fitur Pratinjau Unggah Foto Profil
+            const photoInput = document.getElementById('photoInput');
+            const profileImage = document.getElementById('profileImage');
+
+            if (photoInput && profileImage) {
+                photoInput.addEventListener('change', (e) => {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(event) {
+                            profileImage.src = event.target.result;
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+
+            // 1. Toggle Menu Mobile
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Tutup menu saat tautan diklik di layar kecil
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // 2. Filter Kategori Proyek
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Ubah tombol aktif
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const kategori = btn.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        if (kategori === 'all' || card.getAttribute('data-category') === kategori) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
